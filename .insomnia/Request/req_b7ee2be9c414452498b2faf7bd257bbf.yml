@@ -1,0 +1,21 @@
+_id: req_b7ee2be9c414452498b2faf7bd257bbf
+type: Request
+parentId: wrk_fe49f632a44b4b4686bffe32ac105c6b
+modified: 1667321665825
+created: 1667321545252
+url: localhost:13756/account/login?rUsername=user&rPassword=
+name: Empty fields
+description: ""
+method: POST
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667321545252
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

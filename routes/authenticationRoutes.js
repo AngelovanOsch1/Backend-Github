@@ -5,10 +5,13 @@ module.exports = app => {
 
     app.post('/account/login', async (req, res) => {
     
-        const { rUsername, rPassword } = req.body;
+        const { rUsername, rPassword } = req.query;
         
-        if(rUsername == null || rPassword == null) {
-            res.send("Invalid credentials");
+        console.log(rUsername);
+        console.log(rPassword);
+
+        if(rUsername == "" || rPassword == "") {
+            res.status(401).send("Fields cannot be empty");
             return;
         }
     
@@ -19,30 +22,28 @@ module.exports = app => {
                 userAccount.lastAuthentication = Date.now();
                 await userAccount.save();
                 
-                console.log("Retrieving account...")
+                res.status(200).send("logging in")
                 res.send(userAccount);
                 return;
             }
         }
 
-        res.send("Invalid credentials");
+        res.status(401).send("Invalid credentials");
         return;
     });
     
     app.post('/account/create', async (req, res) => {
     
-        const { rUsername, rPassword } = req.body;
+        const { rUsername, rPassword } = req.query;
         
-        if(rUsername == null || rPassword == null) {
-            res.send("Invalid credentials");
+        if(rUsername == "" || rPassword == "") {
+            res.send("Fields cannot be empty");
             return;
         }
     
         var userAccount = await Account.findOne({ username: rUsername});
         if(userAccount == null) 
         {
-            console.log('create new account');
-
             var newAccount = new Account({
                 username: rUsername,
                 password: rPassword,
@@ -52,9 +53,11 @@ module.exports = app => {
             await newAccount.save();
             res.send(newAccount);
 
+            console.log('Account has been created');
+
             return;
         } else {
-           res.send("Username is already taken")
+           console.log("Username is taken");
         }
         return;
     });    

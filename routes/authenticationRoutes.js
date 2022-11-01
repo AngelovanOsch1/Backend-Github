@@ -4,6 +4,8 @@ const Account = mongoose.model('accounts');
 module.exports = app => {
 
     app.post('/account/login', async (req, res) => {
+
+        console.log("test");
     
         const { rUsername, rPassword } = req.query;
         

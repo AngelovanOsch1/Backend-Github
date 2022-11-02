@@ -1,10 +1,10 @@
-_id: ut_78ed01c5c8e940e793d166faa0c78715
+_id: ut_a9499279cdb44b9582d13b8c2c759127
 type: UnitTest
-parentId: uts_6bef925c744b4335be6959514d883a61
-modified: 1667323956177
-created: 1667321923928
+parentId: uts_26b2ef00e8ad46fba9063b0503b79211
+modified: 1667415928961
+created: 1667415845647
 requestId: req_b7ee2be9c414452498b2faf7bd257bbf
-name: Empty fields
+name: missing field
 code: |-
   const response1 = await insomnia.send();
   expect(response1.status).to.equal(403);

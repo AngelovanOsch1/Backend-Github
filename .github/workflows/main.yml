@@ -13,9 +13,7 @@ jobs:
       - uses: kong/setup-inso@v1
         with:
           inso-version: 3.5.0
-      - name: Lint
-        run: inso lint spec "Unity" --ci
       - name: Run test suites
-        run: inso run test foobar --env "Unity env" --ci
+        run: inso run test foobar --ci
       - name: Generate declarative config
         run: inso generate config "Unity" --type declarative --ci

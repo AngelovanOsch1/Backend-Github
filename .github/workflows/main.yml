@@ -14,6 +14,6 @@ jobs:
         with:
           inso-version: 3.5.0
       - name: Run test suites
-        run: inso run test foobar --ci
+        run: inso run test foobar --ci --env Unity --ci
       - name: Generate declarative config
         run: inso generate config "Unity" --type declarative --ci

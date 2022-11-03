@@ -10,7 +10,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: kong/setup-inso@v1
+      - name: Checkout branch
+        uses: actions/checkout@v2
+      
+      - name: Install inso
+        uses: kong/setup-inso@v1
         with:
           inso-version: 3.5.0
       - name: Run test suites

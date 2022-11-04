@@ -1,0 +1,21 @@
+_id: req_04dadf3983674cf7a0e3dbbe5ea9b41a
+type: Request
+parentId: wrk_fe49f632a44b4b4686bffe32ac105c6b
+modified: 1667563815497
+created: 1667398480010
+url: "{{ _.host }}/account/login?rUsername=user&rPassword=12345"
+name: Logging in
+description: ""
+method: POST
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667398480010
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,10 @@
+_id: ut_d656e409db59477e8c5d95af214c5bf3
+type: UnitTest
+parentId: uts_2d3577350a324f57bf19e2ee7ae45159
+modified: 1667563851186
+created: 1667398527536
+requestId: req_d0f05302df7c401e973fbf7affe286dc
+name: Empty fields
+code: |-
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(401);

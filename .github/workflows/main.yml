@@ -18,6 +18,6 @@ jobs:
         with:
           inso-version: 3.5.0
       - name: Run test suites
-        run: inso run test ut_531f --ci
+        run: inso run test ut_531f --env "Unity env" --ci
       - name: Generate declarative config
         run: inso generate config "Unity" --type declarative --ci

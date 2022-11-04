@@ -21,3 +21,4 @@ jobs:
         run: inso run test uts_26b2ef --env "Base Environment" --ci --verbose
       - name: Generate declarative config
         run: inso generate config "Unity" --type declarative --ci
+c

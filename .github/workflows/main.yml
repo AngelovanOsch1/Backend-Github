@@ -1,6 +1,6 @@
 # .github/workflows/test.yml
 
-name: CLI
+name: CC
 
 on:
   push:

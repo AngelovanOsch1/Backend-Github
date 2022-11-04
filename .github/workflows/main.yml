@@ -18,7 +18,7 @@ jobs:
         with:
           inso-version: 3.5.0
       - name: Run test suites
-        run: inso run test uts_26b2ef --verbose
+        run: inso run test uts_26b2ef --ci
       - name: Generate declarative config
         run: inso generate config "Unity" --type declarative --ci
 c

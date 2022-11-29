@@ -1,19 +1,12 @@
 const mongoose = require('mongoose');
 const Account = mongoose.model('accounts');
 
-//test comment
-
 module.exports = app => {
 
     app.post('/account/login', async (req, res) => {
-
-        console.log("test");
     
-        const { rUsername, rPassword } = req.query;
+        const { rUsername, rPassword } = req.body;
         
-        console.log(rUsername);
-        console.log(rPassword);
-
         if(rUsername == "" || rPassword == "") {
             res.status(401).send("Fields cannot be empty");
             return;
@@ -21,12 +14,14 @@ module.exports = app => {
     
         var userAccount = await Account.findOne({ username: rUsername});
         if(userAccount != null) 
+        
         {
             if(rPassword == userAccount.password) {
                 userAccount.lastAuthentication = Date.now();
+                console.log(userAccount);
                 await userAccount.save();
                 
-                res.status(200).send("logging in")
+                // res.status(200).send("logging in")
                 res.send(userAccount);
                 return;
             }
@@ -38,7 +33,7 @@ module.exports = app => {
     
     app.post('/account/create', async (req, res) => {
     
-        const { rUsername, rPassword } = req.query;
+        const { rUsername, rPassword } = req.body;
         
         if(rUsername == "" || rPassword == "") {
             res.send("Fields cannot be empty");
